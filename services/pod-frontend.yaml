@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: frontend
+  labels:
+    course: mundose
+    app: frontend
+spec:
+  containers:
+    - name: frontend
+      image: docker.io/elviejo1/mundose-frontend:latest
+      ports:
+        - name: http
+          containerPort: 80
+          protocol: TCP
+

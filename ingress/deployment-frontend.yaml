@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        course: mundose
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: docker.io/elviejo1/mundose-frontend:latest
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+
